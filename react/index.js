@@ -4,15 +4,13 @@ import { Home } from "./pages/Home";
 import { Header } from "./components/Header";
 import { RouteNotFound } from "./pages/RouteNotFound";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <BrowserRouter>
-    <ThemeContext>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<RouteNotFound />} />
-      </Routes>
-    </ThemeContext>
-  </BrowserRouter>,
-  document.getElementById("root")
+    <Header />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="*" element={<RouteNotFound />} />
+    </Routes>
+  </BrowserRouter>
 );
